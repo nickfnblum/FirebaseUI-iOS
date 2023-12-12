@@ -20,7 +20,7 @@ import PackageDescription
 let package = Package(
   name: "FirebaseUI",
   defaultLocalization: "en",
-  platforms: [.iOS(.v11)],
+  platforms: [.iOS(.v12)],
   products: [
     .library(
       name: "FirebaseAnonymousAuthUI",
@@ -47,6 +47,10 @@ let package = Package(
       targets: ["FirebaseFirestoreUI"]
     ),
     .library(
+      name: "FirebaseGoogleAuthUI",
+      targets: ["FirebaseGoogleAuthUI"]
+    ),
+    .library(
       name: "FirebaseOAuthUI",
       targets: ["FirebaseOAuthUI"]
     ),
@@ -63,22 +67,22 @@ let package = Package(
     .package(
       name: "Facebook", 
       url: "https://github.com/facebook/facebook-ios-sdk.git",
-      from: "11.0.0"
+      "11.0.0"..<"16.0.0"
     ),
     .package(
       name: "Firebase", 
       url: "https://github.com/firebase/firebase-ios-sdk.git",
-      from: "8.0.0"
+      "8.0.0"..<"11.0.0"
+    ),
+    .package(
+      name: "GoogleSignIn",
+      url: "https://github.com/google/GoogleSignIn-iOS",
+      from: "6.0.0"
     ),
     .package(
       name: "GoogleUtilities",
       url: "https://github.com/google/GoogleUtilities.git",
       from: "7.4.1"
-    ),
-    .package(
-      name: "GTMSessionFetcher",
-      url: "https://github.com/google/gtm-session-fetcher.git",
-      "1.4.0" ..< "2.0.0"
     ),
     .package(
       name: "SDWebImage",
@@ -125,12 +129,6 @@ let package = Package(
       resources: [
         .process("Resources"),
         .process("Strings"),
-        .process("AccountManagement/FUIAccountSettingsViewController.xib"),
-        .process("AccountManagement/FUIInputTableViewCell.xib"),
-        .process("AccountManagement/FUIPasswordTableViewCell.xib"),
-        .process("FUIAuthPickerViewController.xib"),
-        .process("FUIAuthTableViewCell.xib"),
-        .process("FUIStaticContentTableViewController.xib"),
       ],
       publicHeadersPath: "Public",
       cSettings: [
@@ -181,23 +179,23 @@ let package = Package(
         .headerSearchPath("../../"),
       ]
     ),
-    // .target(
-    //   name: "GoogleAuthUI",
-    //   dependencies: [
-    //     "AuthUI",
-    //     // missing google auth dependency
-    //   ],
-    //   path: "GoogleAuth/FirebaseGoogleAuthUI",
-    //   exclude: ["Info.plist"],
-    //   resources: [
-    //     .process("Resources"),
-    //     .process("Strings"),
-    //   ],
-    //   publicHeadersPath: ".",
-    //   cSettings: [
-    //     .headerSearchPath("./"),
-    //   ]
-    // ),
+    .target(
+      name: "FirebaseGoogleAuthUI",
+      dependencies: [
+        "FirebaseAuthUI",
+        "GoogleSignIn"
+      ],
+      path: "FirebaseGoogleAuthUI/Sources",
+      exclude: ["Info.plist"],
+      resources: [
+        .process("Resources"),
+        .process("Strings"),
+      ],
+      publicHeadersPath: "Public",
+      cSettings: [
+        .headerSearchPath("../../"),
+      ]
+    ),
     .target(
       name: "FirebaseOAuthUI",
       dependencies: [
@@ -223,9 +221,6 @@ let package = Package(
       resources: [
         .process("Resources"),
         .process("Strings"),
-        .process("CountryCode/FUICountryTableViewController.xib"),
-        .process("FUIPhoneEntryViewController.xib"),
-        .process("FUIPhoneVerificationViewController.xib"),
       ],
       publicHeadersPath: "Public",
       cSettings: [
@@ -237,7 +232,6 @@ let package = Package(
       dependencies: [
         .product(name: "FirebaseStorage", package: "Firebase"),
         .product(name: "SDWebImage", package: "SDWebImage"),
-        .product(name: "GTMSessionFetcher", package: "GTMSessionFetcher"),
       ],
       path: "FirebaseStorageUI/Sources",
       exclude: ["Info.plist"],

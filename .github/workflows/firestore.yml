@@ -27,7 +27,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: Setup
         run: |
           cd FirebaseFirestoreUI
@@ -44,20 +44,20 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: List
         run: |
           xcodebuild -list
       - name: Build
         run: |
-          xcodebuild -scheme FirebaseFirestoreUI -sdk iphonesimulator
+          xcodebuild -scheme FirebaseFirestoreUI -sdk iphonesimulator  -destination 'platform=iOS Simulator,OS=latest,name=iPhone 13 Pro'
   pod:
     name: pod lib lint
     runs-on: macOS-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@main
       - name: Setup
         run: gem install bundler; bundle install
       - name: Build

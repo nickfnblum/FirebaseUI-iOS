@@ -15,7 +15,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 
 /// Displays an individual chat message inside of a ChatViewController.
 class ChatCollectionViewCell: UICollectionViewCell {
@@ -78,7 +78,7 @@ class ChatCollectionViewCell: UICollectionViewCell {
     let leftRightPadding: CGFloat = 24
     let rect = ChatCollectionViewCell.boundingRectForText(self.textLabel.text!,
                                                           maxWidth: maxWidth)
-    
+
     let constant = max(maxWidth - rect.size.width - leftRightPadding, CGFloat.leastNormalMagnitude)
     if chat.uid == user?.uid ?? "" {
       let colors = ChatCollectionViewCell.selfColors

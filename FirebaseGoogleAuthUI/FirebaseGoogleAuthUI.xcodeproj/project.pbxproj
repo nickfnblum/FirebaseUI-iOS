@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -775,12 +775,15 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
-					"\"${PODS_ROOT}/GoogleSignIn/Frameworks\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/AppAuth\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMAppAuth\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
 					"\"$(PODS_CONFIGURATION_BUILD_DIR)/FirebaseAuthUI\"",
+					"\"$(PODS_CONFIGURATION_BUILD_DIR)/GoogleSignIn\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreInternal\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAppCheckInterop\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RecaptchaInterop\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -830,12 +833,15 @@
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
-					"\"${PODS_ROOT}/GoogleSignIn/Frameworks\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/AppAuth\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMAppAuth\"",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
 					"\"$(PODS_CONFIGURATION_BUILD_DIR)/FirebaseAuthUI\"",
+					"\"$(PODS_CONFIGURATION_BUILD_DIR)/GoogleSignIn\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreInternal\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAppCheckInterop\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RecaptchaInterop\"",
 				);
 				OTHER_LDFLAGS = (
 					"$(inherited)",

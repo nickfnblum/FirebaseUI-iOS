@@ -47,7 +47,7 @@ pod 'FirebaseUI/Phone', '~> 8.0'
 If you're including FirebaseUI in a Swift project, make sure you also have:
 
 ```ruby
-platform :ios, '10.0'
+platform :ios, '11.0'
 use_frameworks!
 ```
 
@@ -61,11 +61,11 @@ to your project.
 The READMEs for components of FirebaseUI can be found in their respective
 project folders.
 
-- [Auth](Auth/README.md)
-- [PhoneAuth](PhoneAuth/README.md)
-- [Database](Database/README.md)
-- [Firestore](Firestore/README.md)
-- [Storage](Storage/README.md)
+- [Auth](FirebaseAuthUI/README.md)
+- [PhoneAuth](FirebasePhoneAuthUI/README.md)
+- [Database](FirebaseDatabaseUI/README.md)
+- [Firestore](FirebaseFirestoreUI/README.md)
+- [Storage](FirebaseStorageUI/README.md)
 
 ## Local Setup
 
